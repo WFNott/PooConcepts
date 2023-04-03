@@ -34,7 +34,7 @@ Console.WriteLine("=============");
     Console.WriteLine(error.InnerException != null ? error.InnerException.Message : error.Message);
 }*/
 
-Employee Employee1 = new SalaryEmployee()
+Employee employee1 = new SalaryEmployee()
 {
     Id = 1,
     FirstName = "Paola",
@@ -45,9 +45,9 @@ Employee Employee1 = new SalaryEmployee()
     Salary = 32000.32M
 };
 
-Console.WriteLine(Employee1);
+// Console.WriteLine(employee1);
 
-Employee Employee2 = new CommissionEmployee()
+Employee employee2 = new CommissionEmployee()
 {
     Id = 1,
     FirstName = "Walther",
@@ -59,7 +59,69 @@ Employee Employee2 = new CommissionEmployee()
     CommissionPercentaje = 0.5F
 };
 
-Console.WriteLine(Employee2);
+//Console.WriteLine(Employee2);
+
+Employee employee3 = new HourlyEmployee()
+{
+    Id = 1,
+    FirstName = "Samuel",
+    LastName = "Acevedo",
+    BirthDate = new Date(2004, 8, 27),
+    HiringDate = new Date(2009, 10, 20),
+    IsActivate = true,
+    HourValue = 24000.32M,
+    Hours = 320.08F
+};
+
+//Console.WriteLine(Employee3);
+
+Employee employee4 = new BaseCommissionEmployee()
+{
+    Id = 1,
+    FirstName = "Samuel",
+    LastName = "Acevedo",
+    BirthDate = new Date(2004, 8, 27),
+    HiringDate = new Date(2009, 10, 20),
+    IsActivate = true,
+    Sales = 56000000.32M,
+    CommissionPercentaje = 0.015F,
+    Base = 890000M
+};
+
+//Console.WriteLine(Employee4);
+
+// Se crea una coleccion de empleado llamado empleados y se inicializa como una lista
+
+ICollection<Employee> employees = new List<Employee>()
+{
+    employee1, employee2, employee3, employee4
+};
+
+// se crea la variable para ver la nomina de todos
+
+decimal payroll = 0;
+
+// For Each 
+
+foreach (Employee employee in employees)
+{
+    Console.WriteLine(employee);
+    payroll += employee.GetValueToPay();
+}
+
+Console.WriteLine("                                  ===============");
+Console.WriteLine($"TOTAL NOMINA                   {$"{payroll:C2}",18}");
+
+
+Invoice invoice1 = new Invoice()
+{
+    ID = 1,
+    Description = "Steak Premium",
+    Quantity = 17.05F,
+    Price= 35000M
+};
+
+Console.WriteLine(invoice1);
 
 
 /*

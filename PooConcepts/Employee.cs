@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PooConcepts
 {
-    public abstract class Employee
+    public abstract class Employee : IPay
     {
         // Se crea las propiedades del cliente
 
