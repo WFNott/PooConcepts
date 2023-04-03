@@ -21,8 +21,8 @@ namespace PooConcepts
         public override string ToString()
         {
             return $"{base.ToString()}" +
-                   $"\n\tCommission Percentaje: {CommissionPercentaje:P2}"+
-                   $"\n\tSales................: {Sales:C2}"+
+                   $"\n\tCommission Percentaje: {$"{CommissionPercentaje:P2}",18}"+
+                   $"\n\tSales................: {$"{Sales:C2}",18}" +
                    $"\n\tValue to Pay.........: {$"{GetValueToPay():C2}",18}";
 
         }
