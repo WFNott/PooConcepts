@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PooConcepts
+﻿namespace PooConcepts
 {
     // Creo la clase y le doy sus atributos
 
@@ -63,7 +57,7 @@ namespace PooConcepts
             /* Matematicamente un año bisiesto es multiplo de 4, pero cada 100 años no es bisiesto
              * sino cada 400 años, por lo que este mismo tambien es multiplo de 400*/
 
-            return year % 400l == 0 || year % 4 == 0 && year % 100 != 0;
+            return year % 400 == 0 || year % 4 == 0 && year % 100 != 0;
 
 
         }

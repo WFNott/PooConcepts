@@ -8,6 +8,7 @@ namespace PooConcepts
 {
     public abstract class Employee
     {
+        // Se crea las propiedades del cliente
 
         public int Id { get; set; }
 
@@ -19,9 +20,13 @@ namespace PooConcepts
 
         public Date HiringDate { get; set; }    
 
-        public bool IsActivate { get; set; }
+        public bool IsActivate { get ; set; }
 
-        public abstract decimal GetValueToPay();
+        // se crea el metodo GetValueToPay
+
+        public abstract decimal GetValueToPay();  
+
+        // se crea el sobreescrito del objeto para que muestre sus propiedades y no el objeto en si
 
         public override string ToString()
         {
